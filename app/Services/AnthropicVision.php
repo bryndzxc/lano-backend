@@ -15,7 +15,6 @@ You will be shown a photo of a paper receipt. Extract these fields and return ON
   "storeName": string,
   "purchaseDate": "YYYY-MM-DD" or null,
   "total": number or null,
-  "currency": "PHP" | "USD" | "EUR" | etc,
   "items": [{ "name": string, "quantity": number, "price": number }],
   "warrantyExpiresAt": "YYYY-MM-DD" or null,
   "warrantyMonths": number or null,
@@ -25,7 +24,7 @@ You will be shown a photo of a paper receipt. Extract these fields and return ON
 
 Rules:
 - If a field is unreadable, use null.
-- Currency: infer from the receipt (₱ = PHP, $ = USD, € = EUR). Default to "PHP" if no symbol/code is present.
+- Do NOT include currency. Ignore any currency symbols on the receipt — the client handles currency separately.
 - Date: convert any format to ISO YYYY-MM-DD.
 - total: the final amount paid (after taxes/discounts). Numbers only, no currency symbols.
 - Items: only include line items that are clearly readable. Skip if uncertain.
@@ -108,9 +107,10 @@ TXT;
             'storeName' => is_string($parsed['storeName'] ?? null) ? $parsed['storeName'] : '',
             'purchaseDate' => $this->isoDate($parsed['purchaseDate'] ?? null),
             'total' => $this->finiteNumber($parsed['total'] ?? null),
-            'currency' => is_string($parsed['currency'] ?? null) && $parsed['currency'] !== ''
-                ? $parsed['currency']
-                : 'PHP',
+            'currency' => is_string($parsed['currency'] ?? null)
+                && preg_match('/^[A-Za-z]{3}$/', $parsed['currency'])
+                ? strtoupper($parsed['currency'])
+                : null,
             'items' => $this->normalizeItems($parsed['items'] ?? []),
             'warrantyExpiresAt' => $this->isoDate($parsed['warrantyExpiresAt'] ?? null),
             'warrantyMonths' => $this->positiveInt($parsed['warrantyMonths'] ?? null),
