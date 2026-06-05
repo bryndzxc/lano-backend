@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lano — Every purchase, protected</title>
+  <meta name="description" content="Scan receipts. Track warranties. Never miss a return or warranty deadline." />
+  <style>
+    :root { --sand:#F4EFE7; --navy:#1C2536; --muted:#5B6472; --gold:#C9A24B; }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; background: var(--sand); color: var(--navy);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      display: flex; align-items: center; justify-content: center;
+      -webkit-font-smoothing: antialiased;
+    }
+    .card { text-align: center; padding: 40px 24px; max-width: 480px; }
+    .mark {
+      width: 64px; height: 64px; border-radius: 16px; margin: 0 auto 24px;
+      background: var(--navy); color: var(--sand);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 34px;
+    }
+    .mark::after { content: "L"; }
+    h1 { font-size: 34px; letter-spacing: -0.02em; margin: 0 0 8px; }
+    .tag { color: var(--muted); font-size: 18px; margin: 0 0 4px; }
+    .sub { color: var(--muted); font-size: 15px; margin: 0 0 28px; }
+    a { color: var(--navy); font-size: 15px; }
+    .gold { height: 4px; width: 40px; background: var(--gold); border-radius: 2px; margin: 0 auto 28px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="mark"></div>
+    <h1>Lano</h1>
+    <p class="tag">Every purchase, protected.</p>
+    <p class="sub">Scan receipts. Track warranties. Never miss a deadline.</p>
+    <div class="gold"></div>
+    <p><a href="/privacy">Privacy Policy</a></p>
+  </div>
+</body>
+</html>

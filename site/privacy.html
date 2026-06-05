@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Lano</title>
+  <meta name="description" content="Privacy Policy for Lano, the receipt vault app." />
+  <style>
+    :root {
+      --sand: #F4EFE7;
+      --navy: #1C2536;
+      --muted: #5B6472;
+      --line: #E2DACE;
+      --gold: #C9A24B;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--sand);
+      color: var(--navy);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 48px 24px 96px; }
+    header { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+    .mark {
+      width: 40px; height: 40px; border-radius: 10px;
+      background: var(--navy); color: var(--sand);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 22px;
+    }
+    .mark::after { content: "L"; }
+    .brand { font-weight: 700; font-size: 20px; letter-spacing: -0.01em; }
+    h1 { font-size: 30px; letter-spacing: -0.02em; margin: 28px 0 4px; }
+    .eff { color: var(--muted); font-size: 14px; margin: 0 0 32px; }
+    h2 { font-size: 19px; margin: 36px 0 10px; letter-spacing: -0.01em; }
+    p, li { color: #2C3445; font-size: 16px; }
+    a { color: var(--navy); text-decoration: underline; text-underline-offset: 2px; }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 6px; }
+    .callout {
+      background: #FBF8F2; border: 1px solid var(--line);
+      border-left: 3px solid var(--gold);
+      border-radius: 10px; padding: 16px 18px; margin: 20px 0;
+    }
+    .callout p { margin: 0; font-size: 15px; }
+    footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="mark"></div>
+      <div class="brand">Lano</div>
+    </header>
+
+    <h1>Privacy Policy</h1>
+    <p class="eff">Last updated: 5 June 2026</p>
+
+    <p>
+      Lano (“the app”, “we”, “us”) is a receipt vault that helps you capture receipts,
+      keep them organized, and get reminders before warranties and return windows expire.
+      We built Lano to be private by default: your receipts live on your own device, not
+      in our cloud. This policy explains what data the app handles, why, and your choices.
+    </p>
+
+    <h2>The short version</h2>
+    <ul>
+      <li>No account, no login. We don’t ask for your name, email, or phone number.</li>
+      <li>Your receipts and their data are stored <strong>locally on your device</strong>.</li>
+      <li>When you scan a receipt, only that <strong>image</strong> is sent — securely — for text extraction, then results return to your device.</li>
+      <li>We don’t sell your data, show ads, or track you across other apps.</li>
+    </ul>
+
+    <h2>Information the app handles</h2>
+    <p><strong>Receipt content you create.</strong> When you add a receipt, the app stores its
+    image and the details you keep or edit (store name, date, total, line items, notes,
+    warranty and return dates). This information is saved <strong>only on your device</strong>
+    using the device’s local storage. It is not uploaded to any account or synced to the cloud.</p>
+
+    <p><strong>Camera and photo library.</strong> With your permission, the app uses your camera
+    to photograph receipts and lets you import existing photos. Images are used solely to
+    create receipts and are stored locally on your device. The app does not browse, upload,
+    or scan any other photos in your library.</p>
+
+    <p><strong>Receipt images sent for text extraction (OCR).</strong> To auto-fill receipt
+    details, the app sends the captured receipt <strong>image</strong> over an encrypted (HTTPS)
+    connection to our processing service at <code>api.heylano.com</code>, which forwards it to
+    our text-extraction provider, <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic, PBC</a>
+    (the makers of Claude AI). The provider reads the image and returns structured text
+    (such as store name, date, total, and items), which is sent back to your device and saved
+    locally. The receipt image is transmitted only for this real-time processing and is
+    <strong>not stored on our server after the request completes</strong>. Per Anthropic’s API
+    terms, data submitted through their API is not used to train their models.</p>
+
+    <p><strong>Notifications.</strong> If you enable reminders, the app schedules
+    <strong>local</strong> notifications on your device for upcoming warranty and return
+    deadlines. These are generated on your device — there is no push server, and no
+    notification data leaves your phone.</p>
+
+    <h2>Crash and stability diagnostics</h2>
+    <p>To keep the app reliable, we may use a third-party crash-reporting service to collect
+    anonymous diagnostic information if the app crashes (such as the type of error and device
+    model). This data does not include your receipts or images and is used only to diagnose
+    and fix problems. If this feature is enabled in your version of the app, it is covered by
+    the service provider’s privacy policy.</p>
+
+    <h2>What we do not do</h2>
+    <ul>
+      <li>We don’t sell, rent, or trade your personal information.</li>
+      <li>We don’t serve advertising or use advertising identifiers.</li>
+      <li>We don’t track your activity across other apps or websites.</li>
+      <li>We don’t require an account, and we don’t build a profile about you.</li>
+    </ul>
+
+    <h2>How your data is stored and protected</h2>
+    <p>Receipt data and images are stored in the app’s private storage on your device.
+    Data sent for OCR travels over encrypted HTTPS connections. Because your receipts are
+    stored locally and not in our cloud, the security of that data also depends on your
+    device’s own protections (screen lock, encryption, and OS updates).</p>
+
+    <div class="callout">
+      <p><strong>Local-only means you are responsible for backups.</strong> Lano does not back
+      up your receipts to the cloud. If you uninstall the app, reset your device, or lose it,
+      your locally stored receipts are permanently deleted and cannot be recovered by us.</p>
+    </div>
+
+    <h2>Your choices and controls</h2>
+    <ul>
+      <li><strong>Delete a receipt:</strong> remove any receipt (and its image) at any time from within the app.</li>
+      <li><strong>Clear all data:</strong> use “Clear all data” in Settings to permanently erase every receipt from your device.</li>
+      <li><strong>Uninstall:</strong> removing the app deletes all of its local data from your device.</li>
+      <li><strong>Permissions:</strong> you can revoke camera, photo, or notification permissions any time in your device settings.</li>
+    </ul>
+
+    <h2>Children’s privacy</h2>
+    <p>Lano is not directed to children under 13, and we do not knowingly collect personal
+    information from children. If you believe a child has provided information to us, please
+    contact us and we will address it.</p>
+
+    <h2>Your rights</h2>
+    <p>Because Lano stores your receipt data on your device and does not maintain accounts or
+    a central database of users, you remain in direct control of your information and can
+    access, edit, or delete it at any time within the app. Depending on where you live
+    (including under the Philippine Data Privacy Act of 2012 and other applicable laws),
+    you may have additional rights regarding personal data; contact us with any request.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>We may update this policy from time to time. When we do, we’ll revise the “Last updated”
+    date above and post the new version at this URL. Significant changes will be reflected here.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about this policy or your data? Email us at
+    <a href="mailto:support@heylano.com">support@heylano.com</a>.</p>
+
+    <footer>
+      © 2026 Lano. Every purchase, protected.
+    </footer>
+  </div>
+</body>
+</html>
